@@ -11,7 +11,7 @@ import Navbar from '../components/Navbar/Navbar';
 const App: React.FC = () => (
   <Router>
     <Route exact path='/'>
-      <Redirect to='/home' />
+      <Redirect to={RoutePaths.HOME} />
     </Route>
     <Switch>
       <Navbar />
