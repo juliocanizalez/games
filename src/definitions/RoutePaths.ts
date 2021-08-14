@@ -1,5 +1,5 @@
 enum RoutePaths {
-  HOME = '/',
+  HOME = '/home',
   TIME_MACHINE = '/machine',
   TIC_TAC_TOE = '/game',
 }
