@@ -13,8 +13,8 @@ const App: React.FC = () => (
     <Route exact path='/'>
       <Redirect to={RoutePaths.HOME} />
     </Route>
+    <Navbar />
     <Switch>
-      <Navbar />
       <Route exact path={RoutePaths.HOME} component={Home} />
       <Route exact path={RoutePaths.TIME_MACHINE} component={TimeMachine} />
       <Route exact path={RoutePaths.TIC_TAC_TOE} component={TicTacToe} />
