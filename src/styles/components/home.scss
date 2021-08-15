@@ -3,23 +3,28 @@
 .home{
   width: 100%;
   margin-top: 3rem;
+  display:flex;
+  flex-direction: column;
   h2{
     text-align: center;
     font-weight: global.$font-light;
-    font-size: 2rem;
-    color: global.$font-secondary; 
+    font-size: 2.5rem;
+    color: global.$primary; 
   }
 }
 
 .division{
   content: "";
-  background-color: global.$primary;
+  background-color: global.$font-secondary;
   height: 100%;
   width: 1px;
 }
 
 .home-selector{
   margin-top: 4rem;
+  align-self: center;
+  width: 80%;
+  padding-bottom: 5rem;
   display:grid;
   grid-template-columns: 15fr 1fr 15fr;
   align-items: center;
@@ -27,7 +32,7 @@
   a{
     height: 100%;
     text-decoration: none;
-    color: global.$font-secondary;
+    color: global.$primary;
   }
   & > a:first-child {
     div {
@@ -46,6 +51,7 @@
     margin-top: 2rem;
     text-align: center;
     font-size: 1.4rem;
+    font-weight: global.$font-regular;
     align-self: end;
   }
   img{
@@ -63,3 +69,23 @@
   }
 }
 
+@media screen and (max-width: 960px) {
+  .home-selector{
+    width: 100%;
+  } 
+  .home-selector__game--static{
+    opacity: 0;
+  }
+}
+
+@media  screen and (max-width: 480px){
+  .home-selector{
+    grid-template-columns: repeat(1, 1fr);
+    padding-bottom: 5rem;
+  }
+  .division{
+    width: 90%;
+    height: 1px;
+    margin-top: 2rem;
+  }
+}
