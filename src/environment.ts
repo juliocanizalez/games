@@ -2,7 +2,7 @@ const SetTitleAndFavicon = (favicon: string, title: string): void => {
   const faviconHTMLElement = document.getElementById('favicon') as HTMLLinkElement;
   faviconHTMLElement.href = favicon;
 
-  //change title in page
+  // change title in page
   document.title = title;
 };
 
