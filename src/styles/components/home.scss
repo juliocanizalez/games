@@ -1,0 +1,65 @@
+@use '../global';
+
+.home{
+  width: 100%;
+  margin-top: 3rem;
+  h2{
+    text-align: center;
+    font-weight: global.$font-light;
+    font-size: 2rem;
+    color: global.$font-secondary; 
+  }
+}
+
+.division{
+  content: "";
+  background-color: global.$primary;
+  height: 100%;
+  width: 1px;
+}
+
+.home-selector{
+  margin-top: 4rem;
+  display:grid;
+  grid-template-columns: 15fr 1fr 15fr;
+  align-items: center;
+  justify-items: center;
+  a{
+    height: 100%;
+    text-decoration: none;
+    color: global.$font-secondary;
+  }
+  & > a:first-child {
+    div {
+      img{
+        margin-top:2rem;
+        margin-left: -7.4rem;
+      }
+    }
+  }
+}
+
+.home-selector__game{
+  height: 100%;
+  display:grid;
+  h4{
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 1.4rem;
+    align-self: end;
+  }
+  img{
+    height:auto;
+    margin-left: -3.2rem;
+  }
+}
+
+.home-selector__game--static{
+  position: absolute;
+  background-color: global.$background;
+  filter: grayscale(100%);
+  &:hover{
+    opacity: 0;
+  }
+}
+
