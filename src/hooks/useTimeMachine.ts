@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react';
 
-const useTimeMachine = <T>(value: T): [T | undefined, (position: number) => T | undefined, number, () => void] => {
+const useTimeMachine = <T>(
+  value: T,
+): [T | undefined, (position: number) => T | undefined, number, () => void] => {
   const ref = useRef<T>();
   const history = useRef<T[]>([]);
 
