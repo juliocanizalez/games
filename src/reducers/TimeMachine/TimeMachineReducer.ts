@@ -2,6 +2,7 @@ import TimeMachineActionsTypes from './TimeMachineActionTypes';
 import InitialState from './InitialState';
 import { ITimeMachineReducerAction } from './ITimeMachine';
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 const TimeMachineReducer = (state = InitialState, action: ITimeMachineReducerAction) => {
   const { currentPosition, isTraveling, squares } = action.payload;
 
