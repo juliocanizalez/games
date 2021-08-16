@@ -9,20 +9,12 @@ interface Props {
   handleResume(): void;
 }
 
-const Menu: React.FC<Props> = ({
-  currentPosition,
-  timeLength,
-  getPreviousValue,
-  handleResume,
-}) => {
+const Menu: React.FC<Props> = ({ currentPosition, timeLength, getPreviousValue, handleResume }) => {
   const [isPrevDisabled, setIsPrevDisabled] = useState<boolean>(true);
   const [isNextDisabled, setIsNextDisabled] = useState<boolean>(true);
 
   useEffect(() => {
-    if (
-      timeLength === 0 ||
-      currentPosition === (timeLength > 1 ? timeLength - 1 : timeLength)
-    ) {
+    if (timeLength === 0 || currentPosition === (timeLength > 1 ? timeLength - 1 : timeLength)) {
       setIsPrevDisabled(true);
     } else {
       setIsPrevDisabled(false);
@@ -49,11 +41,7 @@ const Menu: React.FC<Props> = ({
         getPreviousValue={getPreviousValue}
         increment={false}
       />
-      <Button
-        text='Resume'
-        disabled={isNextDisabled}
-        handleResume={handleResume}
-      />
+      <Button text='Resume' disabled={isNextDisabled} handleResume={handleResume} />
     </div>
   );
 };
