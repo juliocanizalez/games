@@ -7,13 +7,7 @@ interface Props {
   increment?: boolean;
   handleResume?: () => void;
 }
-const Button: React.FC<Props> = ({
-  text,
-  disabled,
-  increment,
-  getPreviousValue,
-  handleResume,
-}) => {
+const Button: React.FC<Props> = ({ text, disabled, increment, getPreviousValue, handleResume }) => {
   return (
     <button
       type='button'
