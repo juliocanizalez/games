@@ -1,0 +1,31 @@
+@use '../../global';
+
+.option {
+  width: 90px;
+  height: 30px;
+  margin: 0.5rem 0;
+  border: none;
+  color: global.$font-white;
+  background-color: global.$secondary;
+  transition: 0.4s;
+  &:enabled{
+    
+  background-color: global.$enabled;
+  }
+  &:hover{
+    cursor: pointer;
+    background-color: global.$primary;
+  }
+  &:disabled{
+    cursor: not-allowed;
+    &:hover{
+      background-color: global.$secondary;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .option {
+    margin: 1rem 0.4rem;
+  }
+}
