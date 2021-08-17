@@ -1,5 +1,7 @@
 import React from 'react';
 
+import '../../styles/components/TimeMachine/button.scss';
+
 interface Props {
   text: string;
   disabled: boolean;
