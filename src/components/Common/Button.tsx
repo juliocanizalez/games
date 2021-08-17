@@ -5,7 +5,7 @@ import '../../styles/components/TimeMachine/button.scss';
 interface Props {
   text: string;
   className: string;
-  disabled: boolean;
+  disabled: boolean | undefined;
   getPreviousValue?: (value: number) => void;
   increment?: boolean;
   handleResume?: () => void;
