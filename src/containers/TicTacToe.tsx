@@ -9,6 +9,7 @@ import TicTacToeReducer from '../reducers/TicTacToe/TicTacToeReducer';
 import TicTacToeActionTypes from '../reducers/TicTacToe/TicTacToeActionTypes';
 import { ITicTacToeReducerState, ITicTacToeReducerAction } from '../reducers/TicTacToe/ITicTacToe';
 import InitialState from '../reducers/TicTacToe/InitialState';
+import '../styles/components/tictactoe.scss';
 
 const TicTacToe: React.FC = () => {
   const [state, dispatch] = useReducer<Reducer<ITicTacToeReducerState, ITicTacToeReducerAction>>(
@@ -174,16 +175,16 @@ const TicTacToe: React.FC = () => {
   }, [historySquares]);
 
   return (
-    <div>
+    <div className='game'>
       <h1>Tic Tac Toe</h1>
-      <div>
+      <div className='game-status'>
         <h4>{isTraveling ? 'Traveling in time' : 'You are in present'}</h4>
         {winner && !isReplaying && <h4>{`Winner: ${winner}`}</h4>}
         {error && !isReplaying && <h4>{error}</h4>}
         {isReplaying && <h4>Replay Mode</h4>}
       </div>
-      <div>
-        <div>
+      <div className='game-content'>
+        <div className='game-content__menu'>
           <Menu
             getPreviousValue={handleGetPrevious}
             handleResume={handleResume}
@@ -196,7 +197,7 @@ const TicTacToe: React.FC = () => {
             isReplaying={isReplaying}
           />
         </div>
-        <div>
+        <div className='game-content__board'>
           <Board squares={squares} handleClick={handleClick} isTraveling={isTraveling} />
         </div>
       </div>
