@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import Button from './Button';
+import Button from '../Common/Button';
 
 interface Props {
   currentPosition: number | undefined;
@@ -31,17 +31,24 @@ const Menu: React.FC<Props> = ({ currentPosition, timeLength, getPreviousValue, 
     <>
       <Button
         text='Previous'
+        className='option'
         disabled={isPrevDisabled}
         getPreviousValue={getPreviousValue}
         increment
       />
       <Button
         text='Next'
+        className='option'
         disabled={isNextDisabled}
         getPreviousValue={getPreviousValue}
         increment={false}
       />
-      <Button text='Resume' disabled={isNextDisabled} handleResume={handleResume} />
+      <Button
+        text='Resume'
+        className='option'
+        disabled={isNextDisabled}
+        handleResume={handleResume}
+      />
     </>
   );
 };
