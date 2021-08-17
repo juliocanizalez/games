@@ -4,8 +4,8 @@ import BoardButton from './BoardButton';
 import TicTacToeSquareType from '../../types/TicTacToeSquareType';
 
 interface Props {
-  squares: TicTacToeSquareType[];
-  isTraveling: boolean;
+  squares: TicTacToeSquareType[] | undefined;
+  isTraveling: boolean | undefined;
   handleClick: (position: number) => void;
 }
 const Board: React.FC<Props> = ({ squares, isTraveling, handleClick }) => (
