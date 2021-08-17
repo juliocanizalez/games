@@ -28,7 +28,7 @@ const Menu: React.FC<Props> = ({ currentPosition, timeLength, getPreviousValue, 
   }, [currentPosition, timeLength]);
 
   return (
-    <div>
+    <>
       <Button
         text='Previous'
         disabled={isPrevDisabled}
@@ -42,7 +42,7 @@ const Menu: React.FC<Props> = ({ currentPosition, timeLength, getPreviousValue, 
         increment={false}
       />
       <Button text='Resume' disabled={isNextDisabled} handleResume={handleResume} />
-    </div>
+    </>
   );
 };
 
