@@ -9,6 +9,8 @@ interface Props {
   getPreviousValue?: (value: number) => void;
   increment?: boolean;
   handleResume?: () => void;
+  handleReset?: () => void;
+  handleReplay?: () => void;
 }
 const Button: React.FC<Props> = ({
   text,
@@ -17,6 +19,8 @@ const Button: React.FC<Props> = ({
   increment,
   getPreviousValue,
   handleResume,
+  handleReset,
+  handleReplay,
 }) => {
   return (
     <button
@@ -30,6 +34,10 @@ const Button: React.FC<Props> = ({
           getPreviousValue(-1);
         } else if (handleResume) {
           handleResume();
+        } else if (handleReset) {
+          handleReset();
+        } else if (handleReplay) {
+          handleReplay();
         }
       }}
     >
