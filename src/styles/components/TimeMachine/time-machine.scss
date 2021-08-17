@@ -1,0 +1,60 @@
+@use '../../global';
+
+.machine{
+  height: 80vh;
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: 1fr;
+  align-content: center;
+  justify-content: center;
+  margin-top: 2rem;
+  padding: 1rem;
+
+  h1{
+    font-weight: global.$font-medium;
+    color: global.$font-primary;
+    text-align: center;
+    font-size: 3rem;
+  }
+  &-status{
+    text-align: center;
+    color: global.$font-secondary;
+  }
+}
+
+.machine-container{
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+  gap: 0.6rem;
+  &__board{
+    display:flex;
+    justify-content: center;
+    .board{
+      width: 80%;
+    }
+  }
+  &__menu {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+  }
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+@media screen and (max-width: 425px) {
+  .machine-container {
+    grid-template-columns: repeat(1, 1fr);
+    &__menu {
+      flex-direction: row;
+    }
+  }
+}
