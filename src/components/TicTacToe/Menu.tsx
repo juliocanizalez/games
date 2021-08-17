@@ -40,37 +40,47 @@ const Menu: React.FC<Props> = ({
 
   return (
     <>
-      <div>
+      <div className='game-menu'>
         <Button
           text='Previous'
-          className=''
+          className='game-button'
           disabled={isDisabledPrevious || isReplaying}
           getPreviousValue={getPreviousValue}
           increment
         />
         <Button
           text='Next'
-          className=''
+          className='game-button'
           disabled={isDisabledNext || isReplaying}
           getPreviousValue={getPreviousValue}
           increment={false}
         />
         <Button
           text='Resume'
-          className=''
+          className='game-button'
           disabled={isDisabledNext || isReplaying}
           handleResume={handleResume}
           increment
         />
-        <Button text='Reset' className='' disabled={isReplaying} handleReset={handleReset} />
+        <Button
+          text='Reset'
+          className='game-button'
+          disabled={isReplaying}
+          handleReset={handleReset}
+        />
         {winner && (
-          <Button text='Replay' className='' disabled={isReplaying} handleReplay={handleReplay} />
+          <Button
+            text='Replay'
+            className='game-button'
+            disabled={isReplaying}
+            handleReplay={handleReplay}
+          />
         )}
       </div>
       {!winner && (
-        <div>
+        <div className='info'>
           <h3>Next</h3>
-          <p style={{ color: xIsNext ? 'hsl(230, 39%, 51%)' : '#545B74' }}>{xIsNext ? 'x' : 'o'}</p>
+          <p style={{ color: xIsNext ? '#2F3241' : '#545B74' }}>{xIsNext ? 'x' : 'o'}</p>
         </div>
       )}
     </>
