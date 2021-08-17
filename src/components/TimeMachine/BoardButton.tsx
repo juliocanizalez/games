@@ -1,5 +1,7 @@
 import React from 'react';
 
+import '../../styles/components/TimeMachine/board-button.scss';
+
 interface Props {
   position: number;
   bgColor: string;
