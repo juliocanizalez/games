@@ -7,7 +7,7 @@ interface Props {
   currentPosition: number | undefined;
   timeLength: number;
   xIsNext: boolean | undefined;
-  isReplaying: boolean;
+  isReplaying: boolean | undefined;
   winner: TicTacToeSquareType | string | undefined;
   getPreviousValue(step: number): void;
   handleResume(): void;
@@ -70,9 +70,7 @@ const Menu: React.FC<Props> = ({
       {!winner && (
         <div>
           <h3>Next</h3>
-          <p style={{ color: xIsNext ? 'hsl(230, 39%, 51%);' : '#545B74' }}>
-            {xIsNext ? 'x' : 'o'}
-          </p>
+          <p style={{ color: xIsNext ? 'hsl(230, 39%, 51%)' : '#545B74' }}>{xIsNext ? 'x' : 'o'}</p>
         </div>
       )}
     </>
