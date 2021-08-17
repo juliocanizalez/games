@@ -1,0 +1,108 @@
+@use '../global';
+
+.game{
+  height: 80vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  align-content: center;
+  justify-content: center;
+  margin-top: 2rem;
+  padding: 1rem;
+  h1{
+    font-weight: global.$font-medium;
+    color: global.$font-primary;
+    text-align: center;
+    font-size: 3rem;
+  }
+  &-status{
+    text-align: center;
+    color: global.$font-secondary;
+  }
+}
+
+.game-board{
+  display: grid;
+  gap: 0.6rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.game-content{
+  width: 80%;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 3fr 4fr;
+  &__menu{
+    .game-menu{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+  }
+}
+
+.board-button {
+  background-color: global.$primary;
+  font-size: 2.4rem;
+}
+
+.game-button {
+  height: 30px;
+  width: 90px;
+  margin: 0.5rem;
+  color: #fff;
+  background-color: global.$secondary;
+  &:enabled{  
+    background-color: global.$enabled;
+  }
+  &:hover{
+    cursor: pointer;
+    background-color: global.$primary;
+  }
+  &:disabled{
+    cursor: not-allowed;
+    &:hover{
+      background-color: global.$secondary;
+    }
+  }
+}
+
+.info{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 2rem; 
+  p{
+    margin-right: 0.7rem;
+    font-size: 2rem;
+    color: global.$primary;
+    font-weight: global.$font-bold;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .game-content {
+    grid-template-columns: 1fr;
+  }
+  .game-content{
+    width: 90%;
+    justify-self: center;
+    &__menu{
+      .game-menu{
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        gap: 0.6rem;
+        justify-items: center;
+      }
+    }
+  }
+  .info{
+    display: grid;
+    justify-content: center;
+    margin:0;
+    *{
+      margin: 0 !important;
+      text-align: center !important;
+    }
+  }
+}
