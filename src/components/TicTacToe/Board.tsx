@@ -9,7 +9,7 @@ interface Props {
   handleClick: (position: number) => void;
 }
 const Board: React.FC<Props> = ({ squares, isTraveling, handleClick }) => (
-  <div>
+  <div className='game-board'>
     {squares &&
       squares.map((state: TicTacToeSquareType, position: number) => (
         <BoardButton
