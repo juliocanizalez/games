@@ -1,4 +1,5 @@
 @use '../global';
+@use '../../keyframes';
 
 .game{
   height: 80vh;
@@ -19,6 +20,7 @@
     text-align: center;
     color: global.$font-secondary;
   }
+  animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
 .game-board{
