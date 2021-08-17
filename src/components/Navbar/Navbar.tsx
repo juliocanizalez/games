@@ -28,12 +28,20 @@ const Navbar: React.FC = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink to={TimeMachine.URL} className={TimeMachine.CLASS_NAME} activeClassName='navbar-active'>
+          <NavLink
+            to={TimeMachine.URL}
+            className={TimeMachine.CLASS_NAME}
+            activeClassName='navbar-active'
+          >
             {TimeMachine.TITLE}
           </NavLink>
         </li>
         <li>
-          <NavLink to={TicTacToe.URL} className={TicTacToe.CLASS_NAME} activeClassName='navbar-active'>
+          <NavLink
+            to={TicTacToe.URL}
+            className={TicTacToe.CLASS_NAME}
+            activeClassName='navbar-active'
+          >
             {TicTacToe.TITLE}
           </NavLink>
         </li>
