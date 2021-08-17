@@ -5,7 +5,7 @@ import TicTacToeSquareType from '../../types/TicTacToeSquareType';
 interface Props {
   position: number;
   checked: TicTacToeSquareType;
-  isTraveling: boolean;
+  isTraveling: boolean | undefined;
   handleClick: (position: number) => void;
 }
 
@@ -15,7 +15,7 @@ const BoardButton: React.FC<Props> = ({ position, checked, isTraveling, handleCl
     className=''
     style={{
       cursor: isTraveling ? 'not-allowed' : 'pointer',
-      color: checked === 'x' ? 'hsl(230, 39%, 51%);' : '#545B74',
+      color: checked === 'x' ? 'hsl(230, 39%, 51%)' : '#545B74',
     }}
     onClick={() => handleClick(position)}
   >
