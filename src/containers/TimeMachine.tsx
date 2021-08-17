@@ -11,6 +11,7 @@ import {
 } from '../reducers/TimeMachine/ITimeMachine';
 import TimeMachineActionsTypes from '../reducers/TimeMachine/TimeMachineActionTypes';
 import InitialState from '../reducers/TimeMachine/InitialState';
+import '../styles/components/TimeMachine/time-machine.scss';
 
 const TimeMachine: React.FC = () => {
   const size = 4;
@@ -71,22 +72,22 @@ const TimeMachine: React.FC = () => {
     });
   };
   return (
-    <div>
+    <div className='machine'>
       <h1>Time Machine</h1>
-      <div>
-        <h5>{isTraveling ? 'Traveling in time' : 'You are in present'}</h5>
+      <div className='machine-status'>
+        <h4>{isTraveling ? 'Traveling in time' : 'You are in present'}</h4>
       </div>
-      <div>
-        <div>
-          <Board squares={squares} handleClick={handleClick} isTraveling={isTraveling} />
-        </div>
-        <div>
+      <div className='machine-container'>
+        <div className='machine-container__menu'>
           <Menu
             getPreviousValue={handleGetPrevious}
             handleResume={handleResume}
             currentPosition={currentPosition}
             timeLength={timeLength}
           />
+        </div>
+        <div className='machine-container__board'>
+          <Board squares={squares} handleClick={handleClick} isTraveling={isTraveling} />
         </div>
       </div>
     </div>
