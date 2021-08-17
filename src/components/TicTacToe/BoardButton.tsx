@@ -12,10 +12,10 @@ interface Props {
 const BoardButton: React.FC<Props> = ({ position, checked, isTraveling, handleClick }) => (
   <button
     type='button'
-    className=''
+    className='board-button'
     style={{
       cursor: isTraveling ? 'not-allowed' : 'pointer',
-      color: checked === 'x' ? 'hsl(230, 39%, 51%)' : '#545B74',
+      color: checked === 'x' ? 'white' : '#fafcff',
     }}
     onClick={() => handleClick(position)}
   >
